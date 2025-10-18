@@ -179,7 +179,7 @@ const LandingPage = () => {
           </div>
         </section>
 
-        {/* Logo Carousel - 2列スタイリッシュバージョン */}
+        {/* Logo Carousel - 可変幅対応版 */}
         <section className="py-24 border-y border-gray-800/30 overflow-hidden relative bg-black/20 backdrop-blur-sm">
           {/* 背景のグラデーション効果 */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#00FFD1]/10 via-transparent to-transparent pointer-events-none" />
@@ -195,16 +195,12 @@ const LandingPage = () => {
           <div className="space-y-6">
             {/* 1列目 - 右へ移動 */}
             <div className="relative">
-              {/* 左側のグラデーションマスク - より滑らかに */}
+              {/* グラデーションマスク */}
               <div className="absolute left-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/95 to-transparent z-10 pointer-events-none" />
-
-              {/* 右側のグラデーションマスク - より滑らかに */}
               <div className="absolute right-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-l from-[#0A0A0A] via-[#0A0A0A]/95 to-transparent z-10 pointer-events-none" />
 
-              {/* 左側のアクセントグロー */}
+              {/* アクセントグロー */}
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#00FFD1]/30 to-transparent z-20 pointer-events-none" />
-
-              {/* 右側のアクセントグロー */}
               <div className="absolute right-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#00FFD1]/30 to-transparent z-20 pointer-events-none" />
 
               <motion.div
@@ -221,19 +217,20 @@ const LandingPage = () => {
                 {[...integrationsRow1, ...integrationsRow1].map((item, i) => (
                   <motion.div
                     key={`row1-${i}`}
-                    className="relative flex items-center justify-center bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-md p-5 rounded-xl border border-white/[0.08] flex-shrink-0 hover:bg-white/[0.08] hover:border-[#00FFD1]/40 hover:shadow-[0_0_20px_rgba(0,255,209,0.15)] transition-all duration-500 group"
+                    className="relative flex items-center justify-center bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-md px-6 py-5 rounded-xl border border-white/[0.08] flex-shrink-0 hover:bg-white/[0.08] hover:border-[#00FFD1]/40 hover:shadow-[0_0_20px_rgba(0,255,209,0.15)] transition-all duration-500 group min-w-[120px]"
                     whileHover={{ scale: 1.08, y: -4 }}
                   >
                     {/* ホバー時のインナーグロー */}
                     <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#00FFD1]/0 to-[#00B4FF]/0 group-hover:from-[#00FFD1]/5 group-hover:to-[#00B4FF]/5 transition-all duration-500" />
 
-                    <div className="relative w-[70px] h-[70px] flex-shrink-0 transition-all duration-500">
+                    <div className="relative h-[50px] w-auto max-w-[160px] flex items-center justify-center">
                       <Image
                         src={item.icon}
                         alt={`${item.name} logo`}
-                        fill
-                        className="object-contain cursor-pointer"
-                        sizes="70px"
+                        width={160}
+                        height={50}
+                        className="object-contain w-auto h-full"
+                        sizes="160px"
                       />
                     </div>
                   </motion.div>
@@ -243,16 +240,10 @@ const LandingPage = () => {
 
             {/* 2列目 - 左へ移動 */}
             <div className="relative">
-              {/* 左側のグラデーションマスク - より滑らかに */}
               <div className="absolute left-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/95 to-transparent z-10 pointer-events-none" />
-
-              {/* 右側のグラデーションマスク - より滑らかに */}
               <div className="absolute right-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-l from-[#0A0A0A] via-[#0A0A0A]/95 to-transparent z-10 pointer-events-none" />
 
-              {/* 左側のアクセントグロー */}
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#00B4FF]/30 to-transparent z-20 pointer-events-none" />
-
-              {/* 右側のアクセントグロー */}
               <div className="absolute right-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#00B4FF]/30 to-transparent z-20 pointer-events-none" />
 
               <motion.div
@@ -269,19 +260,19 @@ const LandingPage = () => {
                 {[...integrationsRow2, ...integrationsRow2].map((item, i) => (
                   <motion.div
                     key={`row2-${i}`}
-                    className="relative flex items-center justify-center bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-md p-5 rounded-xl border border-white/[0.08] flex-shrink-0 hover:bg-white/[0.08] hover:border-[#00B4FF]/40 hover:shadow-[0_0_20px_rgba(0,180,255,0.15)] transition-all duration-500 group"
+                    className="relative flex items-center justify-center bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-md px-6 py-5 rounded-xl border border-white/[0.08] flex-shrink-0 hover:bg-white/[0.08] hover:border-[#00B4FF]/40 hover:shadow-[0_0_20px_rgba(0,180,255,0.15)] transition-all duration-500 group min-w-[120px]"
                     whileHover={{ scale: 1.08, y: -4 }}
                   >
-                    {/* ホバー時のインナーグロー */}
                     <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#00B4FF]/0 to-[#00FFD1]/0 group-hover:from-[#00B4FF]/5 group-hover:to-[#00FFD1]/5 transition-all duration-500" />
 
-                    <div className="relative w-[70px] h-[70px] flex-shrink-0 transition-all duration-500">
+                    <div className="relative h-[50px] w-auto max-w-[160px] flex items-center justify-center">
                       <Image
                         src={item.icon}
                         alt={`${item.name} logo`}
-                        fill
-                        className="object-contain"
-                        sizes="70px"
+                        width={160}
+                        height={50}
+                        className="object-contain w-auto h-full"
+                        sizes="160px"
                       />
                     </div>
                   </motion.div>
@@ -290,7 +281,6 @@ const LandingPage = () => {
             </div>
           </div>
 
-          {/* 下部の装飾的なライン */}
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-64 h-px bg-gradient-to-r from-transparent via-[#00FFD1]/30 to-transparent" />
         </section>
         {/* Problem Statement */}
