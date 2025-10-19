@@ -34,21 +34,26 @@ const LandingPage = () => {
     { icon: "/logos/airtable.png", name: "Airtable", isImage: true },
     { icon: "/logos/gmail.png", name: "Gmail", isImage: true },
     { icon: "/logos/shopify.webp", name: "Shopify", isImage: true },
-    { icon: "/logos/slack.png", name: "Slack", isImage: true },
-    { icon: "/logos/line.png", name: "Line", isImage: true },
+    { icon: "/logos/open_ai.webp", name: "Open_ai", isImage: true },
   ];
 
   const integrationsRow2 = [
-    { icon: "/logos/notion.webp", name: "Notion", isImage: true },
-    { icon: "/logos/discord.png", name: "Discord", isImage: true },
-    { icon: "/logos/stripe.webp", name: "Stripe", isImage: true },
-    { icon: "/logos/airtable.png", name: "Airtable", isImage: true },
-    { icon: "/logos/gmail.png", name: "Gmail", isImage: true },
-    { icon: "/logos/shopify.webp", name: "Shopify", isImage: true },
-    { icon: "/logos/slack.png", name: "Slack", isImage: true },
-    { icon: "/logos/line.png", name: "Line", isImage: true },
-    { icon: "/logos/notion.webp", name: "Notion", isImage: true },
-    { icon: "/logos/discord.png", name: "Discord", isImage: true },
+    { icon: "/logos/insta.webp", name: "insta", isImage: true },
+    { icon: "/logos/youtube.webp", name: "Youtube", isImage: true },
+    { icon: "/logos/x.png", name: "X", isImage: true },
+    { icon: "/logos/trello.png", name: "Trello", isImage: true },
+    { icon: "/logos/google.webp", name: "Google", isImage: true },
+    {
+      icon: "/logos/google_calender.png",
+      name: "Google Calender",
+      isImage: true,
+    },
+    { icon: "/logos/google_docs.png", name: "google_docs", isImage: true },
+    {
+      icon: "/logos/google_ss.png",
+      name: "Google Spread Sheet",
+      isImage: true,
+    },
   ];
 
   const steps = [
@@ -112,32 +117,6 @@ const LandingPage = () => {
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-[#00FFD1]/5 via-transparent to-transparent" />
-          <motion.div
-            className="absolute inset-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 2 }}
-          >
-            {[...Array(20)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute w-1 h-1 bg-[#00FFD1] rounded-full"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                }}
-                animate={{
-                  scale: [1, 1.5, 1],
-                  opacity: [0.3, 1, 0.3],
-                }}
-                transition={{
-                  duration: 3 + Math.random() * 2,
-                  repeat: Infinity,
-                  delay: Math.random() * 2,
-                }}
-              />
-            ))}
-          </motion.div>
 
           <div className="relative text-center px-4 max-w-5xl mx-auto">
             <motion.div
