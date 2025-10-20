@@ -250,27 +250,16 @@ const LandingPage = () => {
     <div className="text-white min-h-screen overflow-hidden relative">
       {/* Global Background Images */}
       <div className="fixed inset-0 -z-10">
-        {[0, 1, 2, 3, 4, 5].map((index) => (
-          <div
-            key={index}
-            className="absolute w-full"
-            style={{
-              height: "100vh",
-              top: `${index * 100}vh`,
-            }}
-          >
-            <Image
-              src="/images/bg.png"
-              alt="Background"
-              fill
-              className="object-cover object-center pointer-events-none select-none"
-              priority={index === 0}
-              sizes="100vw"
-              quality={90}
-            />
-          </div>
-        ))}
-        <div className="absolute inset-0" style={{ height: "600vh" }} />
+        <Image
+          src="/images/bg-3.png"
+          alt="Background"
+          fill
+          className="object-cover object-center pointer-events-none select-none opacity-40"
+          priority
+          sizes="100vw"
+          quality={85}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60" />
       </div>
 
       {/* Content Wrapper */}
